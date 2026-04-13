@@ -17,11 +17,11 @@ data "aws_ssm_parameter" "web_alb_listener_arn_https" {
 data "aws_ami" "ami_info" {
 
     most_recent = true
-    owners = ["973714476881"]
+    owners = ["655431895664"]
 
     filter {
         name   = "name"
-        values = ["RHEL-9-DevOps-Practice"]
+        values = ["bns"]
     }
 
     filter {

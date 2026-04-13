@@ -9,6 +9,9 @@ module "db" {
 
   db_name  = "transactions" #default schema for expense project
   username = "root"
+  password_wo = "ExpenseApp1"
+  password_wo_version = 1
+  
   port     = "3306"
 
   vpc_security_group_ids = [data.aws_ssm_parameter.db_sg_id.value]  
@@ -30,7 +33,7 @@ module "db" {
   )
 
   manage_master_user_password = false
-  password = "ExpenseApp1"
+  #password = "ExpenseApp1"
   skip_final_snapshot = true
 
   parameters = [

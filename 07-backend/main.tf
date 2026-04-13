@@ -1,7 +1,7 @@
 module "backend" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   name = "${var.project_name}-${var.environment}-${var.common_tags.Component}"
-
+   
   instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_ssm_parameter.backend_sg_id.value]
   # convert StringList to list and get first element
@@ -36,11 +36,16 @@ resource "null_resource" "backend" {
 
     provisioner "remote-exec" {
         inline = [
+           
             "chmod +x /tmp/${var.common_tags.Component}.sh",
             "sudo sh /tmp/${var.common_tags.Component}.sh ${var.common_tags.Component} ${var.environment}"
+
+            
         ]
     } 
 }
+
+
 
 resource "aws_ec2_instance_state" "backend" {
   instance_id = module.backend.id
