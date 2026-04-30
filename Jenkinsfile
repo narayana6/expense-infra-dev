@@ -37,6 +37,7 @@ pipeline {
                 terraform apply -auto-approve
                 """
             }
+        }
             stage('Destroy') {
             when {
                 expression{
