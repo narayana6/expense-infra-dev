@@ -24,7 +24,6 @@ pipeline {
                 cd 01-vpc
                 terraform plan
                 """
-                sh 'sleep 10'
             }
         }
         stage('Deploy') {
