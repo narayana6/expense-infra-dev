@@ -21,6 +21,7 @@ pipeline {
         stage('plan') {
             steps {
                 sh """
+                cd 01-vpc
                 terraform plan
                 """
                 sh 'sleep 10'
@@ -29,6 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
+                cd 01-vpc
                 terraform -auto-approve
                 """
             }
