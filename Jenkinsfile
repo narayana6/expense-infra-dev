@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc
-                terraform -auto-approve
+                terraform apply -auto-approve
                 """
             }
         }
