@@ -233,6 +233,7 @@ resource "aws_security_group_rule" "frontend_default_vpc" {
   protocol          = "tcp"
   cidr_blocks = ["172.31.0.0/16"]
   security_group_id = module.frontend.sg_id
+}
 
 
 
