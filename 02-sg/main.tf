@@ -215,7 +215,7 @@ resource "aws_security_group_rule" "bastion_public" {
   security_group_id = module.bastion.sg_id
 }
 
-#this nasa added for 
+#added as part of jenkins CICD
 resource "aws_security_group_rule" "backend_default_vpc" {
   type              = "ingress"
   from_port         = 22
